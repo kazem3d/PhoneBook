@@ -1,2 +1,3 @@
 # PhoneBook
-a simpel appp to contain and seach phone numbers
+a simple appp to contain and seach phone numbers
+writing with python and pyqt
