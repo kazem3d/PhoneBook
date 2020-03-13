@@ -8,6 +8,7 @@
 
 from excel_conv import tabel_list
 from PyQt5 import QtCore, QtGui, QtWidgets
+from about_win import about_dialog
 
 
 
@@ -181,12 +182,9 @@ class Ui_MainWindow(object):
             QtCore.QMetaObject.connectSlotsByName(MainWindow)
     
 
-
-
-
-
             self.getDate()
             self.lineEdit.textChanged.connect(self.filter_items)
+            self.pushButton_3.clicked.connect(self.open_about)
 
 
     def filter_items(self, text):
@@ -219,6 +217,14 @@ class Ui_MainWindow(object):
             self.tableWidget.setRowHidden(row, False)
         else:
             self.tableWidget.setRowHidden(row, True)  
+
+    def open_about(self):
+
+        self.aboutWindow=QtWidgets.QDialog()
+        self.ui=about_dialog()
+        self.ui.setupUi(self.aboutWindow)
+        self.aboutWindow.show()
+
 
 
 

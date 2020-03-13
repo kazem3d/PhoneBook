@@ -1,1 +1,5 @@
 list.xls
+__pycache__
+build
+dist
+phonebook.spec
