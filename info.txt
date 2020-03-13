@@ -1,0 +1,11 @@
+
+#to convert ui file to python file
+pyuic5 -x "C:\Users\kazem\Desktop\project\birthday.ui"  -o "C:\Users\kazem\Desktop\project\bith.py"
+
+#to package python to executable
+pyinstaller -w path
+
+#to import logo to gui
+pyrcc5  -o logo_rc.py logo.qrc
+
+

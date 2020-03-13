@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="logo_perfix">
+    <file>searchLogo.png</file>
+    <file>l.png</file>
+  </qresource>
+</RCC>
