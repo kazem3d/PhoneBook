@@ -54,7 +54,7 @@ class about_dialog(object):
     def retranslateUi(self, dialog):
         _translate = QtCore.QCoreApplication.translate
         dialog.setWindowTitle(_translate("dialog", "About this app"))
-        self.label.setText(_translate("dialog", "Developer contact: Kazem3d@gmail.com"))
+        self.label.setText(_translate("dialog", "تهیه کننده کاظم قناتی Kazem3d@gmail.com"))
         self.label_3.setText(_translate("dialog", "Git hub link to access open soureces file:"))
         self.label_4.setText(_translate("dialog", "<html><head/><body><p><a href=\"https://github.com/kazem3d/PhoneBook.git\"><span style=\" text-decoration: underline; color:#0000ff;\">https://github.com/kazem3d/PhoneBook.git</span></a></p></body></html>"))
         self.label_2.setText(_translate("dialog", "Phone Book v1.0"))

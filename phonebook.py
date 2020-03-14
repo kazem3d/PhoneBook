@@ -20,6 +20,9 @@ class Ui_MainWindow(object):
             self.tableWidget.insertRow(row_id)
             row_data=tabel_list[row_id]
             for column_id , column_data in enumerate(row_data) :
+                if type(column_data) is float:
+                   
+                    column_data=int(column_data)
                 self.tableWidget.setItem(row_id,column_id,QtWidgets.QTableWidgetItem(str(column_data)))
         
    
@@ -104,6 +107,9 @@ class Ui_MainWindow(object):
             self.tableWidget.horizontalHeader().setVisible(True)
             self.tableWidget.horizontalHeader().setCascadingSectionResizes(False)
             self.tableWidget.horizontalHeader().setHighlightSections(True)
+            header=self.tableWidget.horizontalHeader()
+            header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
+            header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
             self.tableWidget.verticalHeader().setVisible(False)
             self.tableWidget.verticalHeader().setHighlightSections(False)
             self.tableWidget.verticalHeader().setStretchLastSection(False)
