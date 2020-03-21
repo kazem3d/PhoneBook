@@ -9,6 +9,8 @@
 from excel_conv import tabel_list
 from PyQt5 import QtCore, QtGui, QtWidgets
 from about_win import about_dialog
+from change import change_Dialog
+from update import update_Dialog
 
 
 
@@ -191,6 +193,8 @@ class Ui_MainWindow(object):
             self.getDate()
             self.lineEdit.textChanged.connect(self.filter_items)
             self.pushButton_3.clicked.connect(self.open_about)
+            self.pushButton_2.clicked.connect(self.open_update)
+            self.pushButton.clicked.connect(self.open_change)
 
 
     def filter_items(self, text):
@@ -230,6 +234,19 @@ class Ui_MainWindow(object):
         self.ui=about_dialog()
         self.ui.setupUi(self.aboutWindow)
         self.aboutWindow.show()
+
+    def open_change(self):
+        self.changeWindow=QtWidgets.QDialog()
+        self.ui=change_Dialog()
+        self.ui.setupUi(self.changeWindow)
+        self.changeWindow.show()
+
+    def open_update(self):
+        self.updateWindow=QtWidgets.QDialog()
+        self.ui=update_Dialog()
+        self.ui.setupUi(self.updateWindow)
+        self.updateWindow.show()
+
 
 
 

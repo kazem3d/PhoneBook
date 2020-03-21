@@ -8,9 +8,17 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+try:
+    from google_sheet import *
+except:
+    print('server not found')
+    connect_message='خطا در ارتباط با سرور'
+else:
+    print('server connected')
+    connect_message='ارتباط با سرور برقرار است'
 
 
-class Ui_Dialog(object):
+class change_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(568, 310)
@@ -40,6 +48,29 @@ class Ui_Dialog(object):
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
+        self.label_2.setText(connect_message)
+        self.pushButton_2.clicked.connect(self.sending)
+        
+    def sending(self):
+        
+        message=self.textEdit.toPlainText()
+        self.label_3.setText('در حال ارسال لطفا منتظر بمانید ...')
+        app.processEvents()
+
+        try:
+    
+            print('sending ...')
+            sheet.append_row([message])
+
+        except:
+            print ('sending error')
+            self.label_3.setText('خطا در ارسال')
+        else:
+            print('sending done')
+            self.label_3.setText('ارسال انجام شد')
+
+
+
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "درخواست تغییر"))
@@ -47,14 +78,14 @@ class Ui_Dialog(object):
         self.pushButton_2.setText(_translate("Dialog", "ارسال"))
         self.label.setText(_translate("Dialog", "درخواست خود را وارد کنید :"))
         self.label_2.setText(_translate("Dialog", "قبل از ارسال نسبت به متصل بودن به اینترنت مطمئن شوید"))
-        self.label_3.setText(_translate("Dialog", "TextLabel"))
+        # self.label_3.setText(_translate("Dialog", "TextLabel"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     Dialog = QtWidgets.QDialog()
-    ui = Ui_Dialog()
+    ui = change_Dialog()
     ui.setupUi(Dialog)
     Dialog.show()
     sys.exit(app.exec_())
