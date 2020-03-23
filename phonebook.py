@@ -6,13 +6,15 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from excel_conv import tabel_list
+# from excel_conv import tabel_list
+from sql_work import tabel_list
 from PyQt5 import QtCore, QtGui, QtWidgets
 from about_win import about_dialog
 from change import change_Dialog
 from update import update_Dialog
 
-
+#TODO fix float numbers
+#TODO do not need to connect to sever at startup
 
 class Ui_MainWindow(object):
 
