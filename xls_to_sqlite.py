@@ -24,10 +24,10 @@ curser.execute('''CREATE TABLE IF NOT EXISTS phonebook (
     id integer PRIMARY KEY,
     name TEXT   ,
     job TEXT ,
-    internal TEXT ,
-    direct TEXT,
-    fax TEXT NULL,
-    IpPhone TEXT NULL
+    internal integer NULL,
+    direct integer NULL,
+    fax integer NULL,
+    IpPhone integer NULL
     )''')
 
         

@@ -10,11 +10,10 @@
 from sql_work import tabel_list
 from PyQt5 import QtCore, QtGui, QtWidgets
 from about_win import about_dialog
-from change import change_Dialog
 from update import update_Dialog
 
-#TODO fix float numbers
-#TODO do not need to connect to sever at startup
+
+
 
 class Ui_MainWindow(object):
 
@@ -238,6 +237,8 @@ class Ui_MainWindow(object):
         self.aboutWindow.show()
 
     def open_change(self):
+        
+        from change import change_Dialog
         self.changeWindow=QtWidgets.QDialog()
         self.ui=change_Dialog()
         self.ui.setupUi(self.changeWindow)

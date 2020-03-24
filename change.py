@@ -8,8 +8,12 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+
+# connect_message='در حال ارتباط با سرور...'
+
 try:
     from google_sheet import *
+
 except:
     print('server not found')
     connect_message='خطا در ارتباط با سرور'
