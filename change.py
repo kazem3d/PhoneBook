@@ -8,18 +8,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import google_sheet
 
 # connect_message='در حال ارتباط با سرور...'
-
-try:
-    from google_sheet import *
-
-except:
-    print('server not found')
-    connect_message='خطا در ارتباط با سرور'
-else:
-    print('server connected')
-    connect_message='ارتباط با سرور برقرار است'
 
 
 class change_Dialog(object):
@@ -52,19 +43,19 @@ class change_Dialog(object):
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
-        self.label_2.setText(connect_message)
+        self.label_2.setText(google_sheet.connect_message)
         self.pushButton_2.clicked.connect(self.sending)
         
     def sending(self):
         
         message=self.textEdit.toPlainText()
         self.label_3.setText('در حال ارسال لطفا منتظر بمانید ...')
-        app.processEvents()
+        # app.processEvents()
 
         try:
     
             print('sending ...')
-            sheet.append_row([message])
+            google_sheet.sheet.append_row([message])
 
         except:
             print ('sending error')

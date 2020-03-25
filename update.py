@@ -9,6 +9,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+import sql_work
+import google_sheet
 
 class update_Dialog(object):
     def setupUi(self, Dialog):
@@ -30,13 +32,27 @@ class update_Dialog(object):
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
+        #display server connetction status in window 
+        self.label.setText(google_sheet.connect_message)
+        self.pushButton.clicked.connect(self.update_database)
+
+    def update_database(self):
+        
+        sql_work.clear_tabel()
+        sql_work.fill_database(google_sheet.fetch_data()) 
+        self.label.setText('بروز رسانی انجام گرفت')
+        print('database up to date')
+
+       
+
+
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.pushButton.setText(_translate("Dialog", "بروز رسانی"))
         self.pushButton_2.setText(_translate("Dialog", "لغو"))
-        self.label.setText(_translate("Dialog", "ابتدا از اتصال به اینترنت مطمئن شوید"))
-        self.label_2.setText(_translate("Dialog", "TextLabel"))
+        # self.label.setText(_translate("Dialog", "ابتدا از اتصال به اینترنت مطمئن شوید"))
+        # self.label_2.setText(_translate("Dialog", "TextLabel"))
 
 
 if __name__ == "__main__":

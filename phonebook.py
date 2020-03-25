@@ -7,13 +7,11 @@
 # WARNING! All changes made in this file will be lost!
 
 # from excel_conv import tabel_list
-from sql_work import tabel_list
+import sql_work 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from about_win import about_dialog
-from update import update_Dialog
 
-
-
+tabel_list=sql_work.get_from_database()
 
 class Ui_MainWindow(object):
 
@@ -27,8 +25,8 @@ class Ui_MainWindow(object):
                    
                     column_data=int(column_data)
                 self.tableWidget.setItem(row_id,column_id,QtWidgets.QTableWidgetItem(str(column_data)))
-        
-   
+
+  
     def setupUi(self, MainWindow):
             MainWindow.setObjectName("MainWindow")
             MainWindow.resize(1070, 485)
@@ -196,6 +194,7 @@ class Ui_MainWindow(object):
             self.pushButton_3.clicked.connect(self.open_about)
             self.pushButton_2.clicked.connect(self.open_update)
             self.pushButton.clicked.connect(self.open_change)
+         
 
 
     def filter_items(self, text):
@@ -245,6 +244,7 @@ class Ui_MainWindow(object):
         self.changeWindow.show()
 
     def open_update(self):
+        from update import update_Dialog
         self.updateWindow=QtWidgets.QDialog()
         self.ui=update_Dialog()
         self.ui.setupUi(self.updateWindow)
@@ -281,6 +281,8 @@ class Ui_MainWindow(object):
         self.pushButton_2.setText(_translate("MainWindow", "بروز رسانی"))
         self.pushButton_3.setToolTip(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
         self.pushButton_3.setText(_translate("MainWindow", "درباره"))
+        
+
 import logo_rc
 
 

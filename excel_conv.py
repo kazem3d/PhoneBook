@@ -1,4 +1,4 @@
-
+#using excel file insted of sql database
 import xlrd
 
 address="list.xls"

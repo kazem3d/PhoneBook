@@ -1,2 +1,5 @@
 createing sql insted of excel
 updating sql database
+
+make change in update and change windows
+update table after updating database insted of reopening the app
