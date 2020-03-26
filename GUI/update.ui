@@ -7,18 +7,21 @@
     <x>0</x>
     <y>0</y>
     <width>491</width>
-    <height>283</height>
+    <height>201</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>بروز رسانی</string>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
   </property>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>170</y>
-     <width>93</width>
+     <x>190</x>
+     <y>110</y>
+     <width>121</width>
      <height>28</height>
     </rect>
    </property>
@@ -26,43 +29,17 @@
     <string>بروز رسانی</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>220</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>لغو</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>70</x>
      <y>50</y>
-     <width>261</width>
+     <width>361</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
     <string>ابتدا از اتصال به اینترنت مطمئن شوید</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>110</y>
-     <width>55</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>TextLabel</string>
    </property>
   </widget>
  </widget>
