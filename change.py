@@ -16,34 +16,25 @@ import google_sheet
 class change_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(568, 310)
-        self.pushButton = QtWidgets.QPushButton(Dialog)
-        self.pushButton.setGeometry(QtCore.QRect(320, 180, 93, 28))
-        self.pushButton.setObjectName("pushButton")
+        Dialog.resize(491, 268)
         self.pushButton_2 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_2.setGeometry(QtCore.QRect(200, 180, 93, 28))
+        self.pushButton_2.setGeometry(QtCore.QRect(210, 180, 93, 28))
         self.pushButton_2.setObjectName("pushButton_2")
         self.textEdit = QtWidgets.QTextEdit(Dialog)
-        self.textEdit.setGeometry(QtCore.QRect(80, 80, 431, 81))
+        self.textEdit.setGeometry(QtCore.QRect(30, 80, 431, 81))
         self.textEdit.setObjectName("textEdit")
         self.label = QtWidgets.QLabel(Dialog)
-        self.label.setGeometry(QtCore.QRect(330, 40, 181, 20))
-        font = QtGui.QFont()
-        font.setFamily("B Homa")
-        font.setPointSize(10)
-        self.label.setFont(font)
+        self.label.setGeometry(QtCore.QRect(100, 40, 350, 20))
         self.label.setObjectName("label")
-        self.label_2 = QtWidgets.QLabel(Dialog)
-        self.label_2.setGeometry(QtCore.QRect(110, 230, 411, 20))
-        self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(Dialog)
-        self.label_3.setGeometry(QtCore.QRect(170, 260, 261, 21))
+        self.label_3.setGeometry(QtCore.QRect(140, 210, 321, 31))
         self.label_3.setObjectName("label_3")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
-        self.label_2.setText(google_sheet.connect_message)
+
+        self.label_3.setText(google_sheet.connect_message)
         self.pushButton_2.clicked.connect(self.sending)
         
     def sending(self):
@@ -69,11 +60,9 @@ class change_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "درخواست تغییر"))
-        self.pushButton.setText(_translate("Dialog", "لغو"))
         self.pushButton_2.setText(_translate("Dialog", "ارسال"))
-        self.label.setText(_translate("Dialog", "درخواست خود را وارد کنید :"))
-        self.label_2.setText(_translate("Dialog", "قبل از ارسال نسبت به متصل بودن به اینترنت مطمئن شوید"))
-        # self.label_3.setText(_translate("Dialog", "TextLabel"))
+        self.label.setText(_translate("Dialog", "درخواست خود را به صورت پیام  وارد کنید :"))
+        self.label_3.setText(_translate("Dialog", "TextLabel"))
 
 
 if __name__ == "__main__":

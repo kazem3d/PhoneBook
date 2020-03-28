@@ -15,19 +15,14 @@ import google_sheet
 class update_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(491, 283)
+        Dialog.resize(491, 201)
+        Dialog.setModal(False)
         self.pushButton = QtWidgets.QPushButton(Dialog)
-        self.pushButton.setGeometry(QtCore.QRect(200, 170, 93, 28))
+        self.pushButton.setGeometry(QtCore.QRect(190, 110, 121, 28))
         self.pushButton.setObjectName("pushButton")
-        self.pushButton_2 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_2.setGeometry(QtCore.QRect(200, 220, 93, 28))
-        self.pushButton_2.setObjectName("pushButton_2")
         self.label = QtWidgets.QLabel(Dialog)
-        self.label.setGeometry(QtCore.QRect(130, 50, 261, 21))
+        self.label.setGeometry(QtCore.QRect(70, 50, 361, 21))
         self.label.setObjectName("label")
-        self.label_2 = QtWidgets.QLabel(Dialog)
-        self.label_2.setGeometry(QtCore.QRect(170, 110, 55, 16))
-        self.label_2.setObjectName("label_2")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -48,11 +43,9 @@ class update_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "بروز رسانی"))
         self.pushButton.setText(_translate("Dialog", "بروز رسانی"))
-        self.pushButton_2.setText(_translate("Dialog", "لغو"))
-        # self.label.setText(_translate("Dialog", "ابتدا از اتصال به اینترنت مطمئن شوید"))
-        # self.label_2.setText(_translate("Dialog", "TextLabel"))
+        self.label.setText(_translate("Dialog", "ابتدا از اتصال به اینترنت مطمئن شوید"))
 
 
 if __name__ == "__main__":

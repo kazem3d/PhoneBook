@@ -52,7 +52,7 @@ class Ui_MainWindow(object):
             self.tableWidget.setSizePolicy(sizePolicy)
             self.tableWidget.setBaseSize(QtCore.QSize(0, 0))
             font = QtGui.QFont()
-            font.setFamily("B Kamran")
+            font.setFamily("B homa")
             font.setPointSize(12)
             font.setBold(True)
             font.setWeight(75)

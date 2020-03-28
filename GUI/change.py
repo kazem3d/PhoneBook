@@ -21,7 +21,7 @@ class Ui_Dialog(object):
         self.textEdit.setGeometry(QtCore.QRect(30, 80, 431, 81))
         self.textEdit.setObjectName("textEdit")
         self.label = QtWidgets.QLabel(Dialog)
-        self.label.setGeometry(QtCore.QRect(250, 40, 211, 20))
+        self.label.setGeometry(QtCore.QRect(100, 40, 350, 20))
         self.label.setObjectName("label")
         self.label_3 = QtWidgets.QLabel(Dialog)
         self.label_3.setGeometry(QtCore.QRect(140, 210, 321, 31))
