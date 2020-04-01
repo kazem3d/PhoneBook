@@ -13,6 +13,7 @@ def get_from_database():
     rows=curser.fetchall()
     for row in rows:
         tabel_list.append(row)  
+    tabel_list.pop(0)
     return tabel_list
 
 #fill database with a list of list : <tabel_list>

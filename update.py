@@ -10,7 +10,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 import sql_work
-import google_sheet
+
 
 class update_Dialog(object):
     def setupUi(self, Dialog):
@@ -28,16 +28,28 @@ class update_Dialog(object):
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
         #display server connetction status in window 
-        self.label.setText(google_sheet.connect_message)
+        self.label.setText('ابتدا از اتصال به اینترنت مطمئن شوید')
         self.pushButton.clicked.connect(self.update_database)
 
     def update_database(self):
-        
-        sql_work.clear_tabel()
-        sql_work.fill_database(google_sheet.fetch_data()) 
-        self.label.setText('بروز رسانی انجام گرفت')
-        print('database up to date')
+        self.label.setText('در حال ارسال لطفا منتظر بمانید ...')
+        import google_sheet
 
+        try:
+
+            sql_work.clear_tabel()
+            sql_work.fill_database(google_sheet.fetch_data()) 
+        
+        except:
+            self.label.setText('خطا در دریافت اطلاعات')
+            print('error in updating')
+
+        else:
+
+            self.label.setText('  بروز رسانی انجام گرفت.  لطفا یک مرتبه از برنامه خارج شده و مجدد وارد  شوید')
+            print('database up to date')
+
+        
        
 
 

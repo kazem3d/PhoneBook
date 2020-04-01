@@ -11,11 +11,12 @@ import sql_work
 from PyQt5 import QtCore, QtGui, QtWidgets
 from about_win import about_dialog
 
-tabel_list=sql_work.get_from_database()
 
 class Ui_MainWindow(object):
 
     def getDate(self):
+        tabel_list=sql_work.get_from_database()
+
         self.tableWidget.setRowCount(0)
         for row_id , row_data in enumerate(tabel_list):
             self.tableWidget.insertRow(row_id)
@@ -52,10 +53,10 @@ class Ui_MainWindow(object):
             self.tableWidget.setSizePolicy(sizePolicy)
             self.tableWidget.setBaseSize(QtCore.QSize(0, 0))
             font = QtGui.QFont()
-            font.setFamily("B homa")
+            font.setFamily("B Yekan")
             font.setPointSize(12)
             font.setBold(True)
-            font.setWeight(75)
+            font.setWeight(50)
             self.tableWidget.setFont(font)
             self.tableWidget.setFocusPolicy(QtCore.Qt.NoFocus)
             self.tableWidget.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
@@ -118,7 +119,7 @@ class Ui_MainWindow(object):
             self.lineEdit.setGeometry(QtCore.QRect(650, 90, 361, 41))
             font = QtGui.QFont()
             font.setFamily("B Kamran")
-            font.setPointSize(11)
+            font.setPointSize(12)
             font.setBold(True)
             font.setWeight(75)
             self.lineEdit.setFont(font)
@@ -137,7 +138,7 @@ class Ui_MainWindow(object):
             self.label.setGeometry(QtCore.QRect(700, 10, 341, 31))
             font = QtGui.QFont()
             font.setFamily("B Titr")
-            font.setPointSize(10)
+            font.setPointSize(12)
             font.setBold(True)
             font.setWeight(75)
             self.label.setFont(font)
@@ -146,7 +147,7 @@ class Ui_MainWindow(object):
             self.label_2.setGeometry(QtCore.QRect(920, 50, 121, 31))
             font = QtGui.QFont()
             font.setFamily("B Titr")
-            font.setPointSize(10)
+            font.setPointSize(12)
             font.setBold(True)
             font.setWeight(75)
             self.label_2.setFont(font)
@@ -257,7 +258,7 @@ class Ui_MainWindow(object):
     
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "دفترچه تلفن"))
+        MainWindow.setWindowTitle(_translate("MainWindow", " v2.0  دفترچه تلفن"))
         self.tableWidget.setSortingEnabled(False)
         item = self.tableWidget.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "نام"))
@@ -276,7 +277,7 @@ class Ui_MainWindow(object):
         self.tableWidget.setSortingEnabled(__sortingEnabled)
         self.lineEdit.setPlaceholderText(_translate("MainWindow", "   جستجوی نام یا شغل ..."))
         self.label.setText(_translate("MainWindow", "اداره کل راهداری و حمل و نقل جاده ای استان مرکزی"))
-        self.label_2.setText(_translate("MainWindow", "دفترچه تلفن"))
+        self.label_2.setText(_translate("MainWindow", " دفترچه تلفن"))
         self.pushButton.setText(_translate("MainWindow", "در خواست تغییرات"))
         self.pushButton_2.setText(_translate("MainWindow", "بروز رسانی"))
         self.pushButton_3.setToolTip(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))

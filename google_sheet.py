@@ -8,7 +8,8 @@ try:
     creds=ServiceAccountCredentials.from_json_keyfile_name('t.json',scope)
     client=gspread.authorize(creds)
 
-    sheet=client.open('test1').sheet1
+    sheet=client.open('phonebook').sheet1
+    sheet_request=client.open('phonebook').get_worksheet(1)
 
 except:
     print('server not found')
